@@ -1,4 +1,4 @@
-package com.bankonet;
+package com.bankonet.metier;
 
 
 public class CompteEpargne extends Compte {
