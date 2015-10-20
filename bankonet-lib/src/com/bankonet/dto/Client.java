@@ -6,20 +6,28 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.*;
+
 import com.bankonet.exception.CompteNonTrouveException;
 import com.bankonet.metier.ToString;
 
+@Entity
 public class Client {
+		
+	@Id
+	@GeneratedValue
+	private Integer id;
 	
 	private Civilite civilite;
 	@ToString (uppercase = true) private String nom;
 	@ToString private String prenom;
 	private String login;
 	private String mdp;
-	private String identifiant;
+	//private String identifiant;
 	
 	private static int nbClients = 0;
 	
+	@Transient
 	private Map<String, Compte> comptesMap = new HashMap<>();
 
 	public Client(Civilite civilite, String nom, String prenom, String login, String mdp) {
@@ -85,13 +93,13 @@ public class Client {
 		this.login = login;
 	}
 
-	public String getIdentifiant() {
-		return identifiant;
-	}
-
-	public void setIdentifiant(String identifiant) {
-		this.identifiant = identifiant;
-	}
+//	public String getIdentifiant() {
+//		return identifiant;
+//	}
+//
+//	public void setIdentifiant(String identifiant) {
+//		this.identifiant = identifiant;
+//	}
 	
 	public String getMdp() {
 		return mdp;

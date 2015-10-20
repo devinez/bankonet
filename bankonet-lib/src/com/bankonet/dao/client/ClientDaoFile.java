@@ -48,7 +48,7 @@ public class ClientDaoFile implements ClientDao {
 		FileWriter fw;
 		try {
 			fw = new FileWriter(fichierClient);
-			String propClient = String.format("%s=nom:%s&prenom:%s&comptes_courants:%s\n", client.getIdentifiant(), client.getNom().toUpperCase(), client.getPrenom(), client.getComptesList().iterator().next().getNumero());
+			String propClient = String.format("%s=nom:%s&prenom:%s&comptes_courants:%s\n", client.getCivilite(), client.getNom().toUpperCase(), client.getPrenom(), client.getComptesList().iterator().next().getNumero());
 
 			System.out.println(propClient);
 			fw.write(propClient);
