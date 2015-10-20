@@ -1,4 +1,4 @@
-package com.bankonet.metier;
+package com.bankonet.dto;
 
 
 import java.lang.reflect.Field;
@@ -6,26 +6,36 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.bankonet.exception.CompteNonTrouveException;
+import com.bankonet.metier.ToString;
+
 public class Client {
 	
 	private Civilite civilite;
 	@ToString (uppercase = true) private String nom;
 	@ToString private String prenom;
+	private String login;
+	private String mdp;
 	private String identifiant;
 	
 	private static int nbClients = 0;
 	
 	private Map<String, Compte> comptesMap = new HashMap<>();
 
-	public Client(Civilite civilite, String nom, String prenom, String identifiant) {
+	public Client(Civilite civilite, String nom, String prenom, String login, String mdp) {
 		super();
 		setNbClients(getNbClients() + 1);
 		this.nom = nom;
 		this.prenom = prenom;
-		this.identifiant = identifiant;
-		this.civilite = civilite;
+		this.login = login;
+		this.setCivilite(civilite);
+		this.setMdp(mdp);
 	}
 	
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void creerCompte(Compte compte) {
 		comptesMap.put(compte.getNumero(), compte);
 	}
@@ -66,6 +76,14 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
 	public String getIdentifiant() {
 		return identifiant;
@@ -73,6 +91,22 @@ public class Client {
 
 	public void setIdentifiant(String identifiant) {
 		this.identifiant = identifiant;
+	}
+	
+	public String getMdp() {
+		return mdp;
+	}
+	
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
+	}
+	
+	public Civilite getCivilite() {
+		return civilite;
+	}
+	
+	public void setCivilite(Civilite civilite) {
+		this.civilite = civilite;
 	}
 
 	public Collection<Compte> getComptesList() {
@@ -115,10 +149,7 @@ public class Client {
 	}
 
 
-	static {
-		
-		
-	}
+
 	
 	
 	

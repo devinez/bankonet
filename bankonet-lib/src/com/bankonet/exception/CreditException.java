@@ -1,5 +1,4 @@
-package com.bankonet.metier;
-
+package com.bankonet.exception;
 
 public class CreditException extends CompteException{
 

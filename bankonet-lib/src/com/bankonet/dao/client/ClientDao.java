@@ -1,10 +1,12 @@
 package com.bankonet.dao.client;
 
-import java.util.List;
+import java.sql.SQLException;
+import java.util.Set;
 
-import com.bankonet.metier.Client;
+import com.bankonet.dto.Client;
+import com.bankonet.exception.BankonetException;
 
 public interface ClientDao {
-	List<Client> findAll();
-	void save(Client client);
+	Set<Client> findAll() throws BankonetException;
+	void save(Client client) throws BankonetException, SQLException;
 }

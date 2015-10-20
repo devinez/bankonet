@@ -1,5 +1,7 @@
-package com.bankonet.metier;
+package com.bankonet.dto;
 
+import com.bankonet.exception.CompteException;
+import com.bankonet.exception.CreditException;
 
 public class CompteEpargne extends Compte {
 	private static final double PLAFOND = 12000;

@@ -1,4 +1,4 @@
-package com.bankonet.metier;
+package com.bankonet.dto;
 
 
 public enum Civilite {

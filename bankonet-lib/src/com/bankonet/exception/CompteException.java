@@ -1,7 +1,7 @@
-package com.bankonet.metier;
+package com.bankonet.exception;
 
 
-public class CompteException extends Exception {
+public class CompteException extends BankonetException {
 
 	public CompteException() {
 		super();

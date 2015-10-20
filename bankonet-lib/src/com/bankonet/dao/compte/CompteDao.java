@@ -2,8 +2,8 @@ package com.bankonet.dao.compte;
 
 import java.util.List;
 
-import com.bankonet.metier.Compte;
-import com.bankonet.metier.CompteException;
+import com.bankonet.dto.Compte;
+import com.bankonet.exception.CompteException;
 
 public interface CompteDao {
 	List<Compte> findAll();
