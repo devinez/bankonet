@@ -1,13 +1,30 @@
 package com.bankonet.dto;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import com.bankonet.exception.CompteException;
 import com.bankonet.exception.DebitException;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 public abstract class Compte implements CompteStat {
 	
+	@Id
+	@GeneratedValue
+	private Integer id;
 	private String numero;
 	private String intitule;
 	private double solde;
+	
+	public Compte() {
+
+	}
 	
 	public Compte(String numero, String intitule, double solde) {
 		super();
@@ -40,8 +57,15 @@ public abstract class Compte implements CompteStat {
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
-	
-	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public void crediter(double montant) throws CompteException {
 		solde = solde + montant;
 	}

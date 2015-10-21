@@ -1,6 +1,10 @@
 package com.bankonet.dto;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
+@Entity
+@DiscriminatorValue("C")
 public class CompteCourant extends Compte {
 	
 
@@ -9,6 +13,11 @@ public class CompteCourant extends Compte {
 	
 	
 		
+	public CompteCourant() {
+		super();
+	}
+
+
 	public CompteCourant(String numero, String intitule, double solde, double montantDecouvertAutorise) {
 		super(numero, intitule, solde);		
 		this.montantDecouvertAutorise = montantDecouvertAutorise;
@@ -42,6 +51,4 @@ public class CompteCourant extends Compte {
 		return montantDecouvertAutorise + getSolde();
 	}
 	
-	
-
 }

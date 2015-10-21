@@ -7,12 +7,10 @@ import com.bankonet.dao.compte.CompteDaoMySQL;
 
 public class DaoFactoryMySQL implements DaoFactory {
 	
-	private CompteDao compteDao = new CompteDaoMySQL();
-
 	@Override
 	public CompteDao getCompteDao() {
 		// TODO Auto-generated method stub
-		return getCompteDao();
+		return new CompteDaoMySQL();
 	}
 
 	@Override

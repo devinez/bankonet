@@ -18,7 +18,8 @@ public class Client {
 	@GeneratedValue
 	private Integer id;
 	
-	private Civilite civilite;
+	
+	//private Civilite civilite;
 	@ToString (uppercase = true) private String nom;
 	@ToString private String prenom;
 	private String login;
@@ -30,13 +31,13 @@ public class Client {
 	@Transient
 	private Map<String, Compte> comptesMap = new HashMap<>();
 
-	public Client(Civilite civilite, String nom, String prenom, String login, String mdp) {
+	public Client(/*Civilite civilite,*/ String nom, String prenom, String login, String mdp) {
 		super();
 		setNbClients(getNbClients() + 1);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.login = login;
-		this.setCivilite(civilite);
+//		this.setCivilite(civilite.getLibelle());
 		this.setMdp(mdp);
 	}
 	
@@ -69,6 +70,14 @@ public class Client {
 	}
 	
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getNom() {
 		return nom;
 	}
@@ -109,13 +118,13 @@ public class Client {
 		this.mdp = mdp;
 	}
 	
-	public Civilite getCivilite() {
-		return civilite;
-	}
-	
-	public void setCivilite(Civilite civilite) {
-		this.civilite = civilite;
-	}
+//	public String getCivilite() {
+//		return civilite.getLibelle();
+//	}
+//	
+//	public void setCivilite(String civilite) {
+//		this.civilite.setLibelle(civilite);
+//	}
 
 	public Collection<Compte> getComptesList() {
 		return comptesMap.values();

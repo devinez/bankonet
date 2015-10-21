@@ -24,7 +24,7 @@ public class ClientServiceImpl implements ClientService {
 
 		String intitule = String.format("%s_%s_COURANT_%s", nom.toUpperCase(), prenom, numero);
 		System.out.println(intitule);
-		Client cl = new Client(Civilite.MONSIEUR, nom, prenom, login, mdp);
+		Client cl = new Client(/*Civilite.MONSIEUR,*/ nom, prenom, login, mdp);
 		CompteCourant cc = new CompteCourant(numero, intitule, 100, 400);
 		cl.creerCompte(cc);
 		clientDao.save(cl);

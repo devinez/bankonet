@@ -1,12 +1,22 @@
 package com.bankonet.dto;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import com.bankonet.exception.CompteException;
 import com.bankonet.exception.CreditException;
 
+@Entity
+@DiscriminatorValue("E")
 public class CompteEpargne extends Compte {
 	private static final double PLAFOND = 12000;
 	
 	private double tauxInteret;
+
+	
+	public CompteEpargne() {
+		super();
+	}
 
 	public CompteEpargne(String numero, String intitule, double solde, double tauxInteret) {
 		super(numero, intitule, solde);

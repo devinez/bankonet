@@ -4,12 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.Set;
 
-import com.bankonet.dto.Civilite;
 import com.bankonet.dto.Client;
-import com.bankonet.dto.CompteCourant;
 import com.bankonet.exception.BankonetException;
 
 public class ClientDaoFile implements ClientDao {
@@ -48,7 +45,7 @@ public class ClientDaoFile implements ClientDao {
 		FileWriter fw;
 		try {
 			fw = new FileWriter(fichierClient);
-			String propClient = String.format("%s=nom:%s&prenom:%s&comptes_courants:%s\n", client.getCivilite(), client.getNom().toUpperCase(), client.getPrenom(), client.getComptesList().iterator().next().getNumero());
+			String propClient = String.format("%s=nom:%s&prenom:%s&comptes_courants:%s\n", /*client.getCivilite(),*/ client.getNom().toUpperCase(), client.getPrenom(), client.getComptesList().iterator().next().getNumero());
 
 			System.out.println(propClient);
 			fw.write(propClient);
