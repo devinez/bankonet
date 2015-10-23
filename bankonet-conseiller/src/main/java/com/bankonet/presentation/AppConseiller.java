@@ -32,15 +32,12 @@ public class AppConseiller {
 		// TODO Auto-generated method stub
 		System.out.println("************* Application Conseiller Bancaire *************\n\n");
 
-		TreeSet<IhmCommand> commands = new TreeSet<>(Arrays.asList(
-				new ListerTousLesClientsCommand(clientService), 
-				new ExitCommand(), 
-				new OuvrirCompteCourantCommand(scanInput ,clientService)));
+		TreeSet<IhmCommand> commands = new TreeSet<>(Arrays.asList(/*new ListerTousLesClientsCommand(clientService),*/
+				new ExitCommand(), new OuvrirCompteCourantCommand(scanInput, clientService)));
 
 		for (IhmCommand command : commands) {
 			System.out.println(command.getId() + ": " + command.getLibelle());
 		}
-
 	}
 
 	public AppConseiller(Scanner scanInput) {
@@ -49,16 +46,16 @@ public class AppConseiller {
 
 	}
 
-//	private void listerClients() throws IOException {
-//		try {
-//			for (Client c : clientService.findAll()) {
-//				// System.out.println(c);
-//			}
-//		} catch (BankonetException e) {
-//			System.out.println("Impossible d'afficher les clients");
-//		}
-//
-//	}
+	// private void listerClients() throws IOException {
+	// try {
+	// for (Client c : clientService.findAll()) {
+	// // System.out.println(c);
+	// }
+	// } catch (BankonetException e) {
+	// System.out.println("Impossible d'afficher les clients");
+	// }
+	//
+	// }
 
 	private void ouvrirCompte(Scanner scanInput) throws IOException {
 		String nom, prenom, login, mdp = "secret";
@@ -72,7 +69,6 @@ public class AppConseiller {
 		prenom = scanInput.nextLine();
 		System.out.println("login ?");
 		login = scanInput.nextLine();
-
 
 		try {
 			clientService.creerClient(nom, prenom, login, mdp);

@@ -4,7 +4,7 @@ import com.bankonet.dto.Client;
 import com.bankonet.exception.BankonetException;
 import com.bankonet.metier.ClientService;
 
-public class ListerTousLesClientsCommand implements IhmCommand {
+public class ListerTousLesClientsCommand extends IhmCommand {
 
 	//private DaoFactory factory = new DaoFactoryMySQL();
 	//private DaoFactory factory = new DaoFactoryJPA("bankonet-lib");
@@ -38,6 +38,12 @@ public class ListerTousLesClientsCommand implements IhmCommand {
 	public void execute() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int compareTo(IhmCommand o) {
+		// TODO Auto-generated method stub
+		return 2;
 	}
 
 }

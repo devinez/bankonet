@@ -6,7 +6,7 @@ import java.util.Scanner;
 import com.bankonet.exception.BankonetException;
 import com.bankonet.metier.ClientService;
 
-public class OuvrirCompteCourantCommand implements IhmCommand {
+public class OuvrirCompteCourantCommand extends IhmCommand {
 
 	private ClientService clientService;
 	private Scanner scanInput;
@@ -54,6 +54,12 @@ public class OuvrirCompteCourantCommand implements IhmCommand {
 		
 		
 		
+	}
+
+	@Override
+	public int compareTo(IhmCommand o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

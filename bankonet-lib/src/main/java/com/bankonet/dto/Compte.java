@@ -39,33 +39,7 @@ public abstract class Compte implements CompteStat {
 	
 	abstract protected double calculerDebitMaximum();
 	
-	public String getNumero() {
-		return numero;
-	}
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-	public String getIntitule() {
-		return intitule;
-	}
-	public void setIntitule(String intitule) {
-		this.intitule = intitule;
-	}
-	public double getSolde() {
-		return solde;
-	}
-	public void setSolde(double solde) {
-		this.solde = solde;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
+	
 	public void crediter(double montant) throws CompteException {
 		solde = solde + montant;
 	}
@@ -90,4 +64,31 @@ public abstract class Compte implements CompteStat {
 				intitule, solde);
 	}
 
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	public String getIntitule() {
+		return intitule;
+	}
+	public void setIntitule(String intitule) {
+		this.intitule = intitule;
+	}
+	public double getSolde() {
+		return solde;
+	}
+	public void setSolde(double solde) {
+		this.solde = solde;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 }
